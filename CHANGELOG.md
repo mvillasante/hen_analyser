@@ -22,5 +22,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.4.0] - 2023-08-31
 
 
-[unreleased]: https://github.com/IslasGECI/basic_python_project/compare/v1.1.1...HEAD
-[0.0.1]: https://github.com/IslasGECI/basic_python_project/releases/tag/v0.0.1
+[unreleased]: https://github.com/IslasGECI/hen_analyser/compare/v1.1.1...HEAD
+[0.0.1]: https://github.com/IslasGECI/hen_analyser/releases/tag/v0.0.1

@@ -7,8 +7,8 @@ author = "Ciencia de Datos • GECI"
 author-email = "ciencia.datos@islas.org.mx"
 classifiers = [ "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",]
 description-file = "README.md"
-home-page = "https://github.com/IslasGECI/basic_python_project"
-module = "basic_python_project"
+home-page = "https://github.com/IslasGECI/hen_analyser"
+module = "huevolizer"
 requires = [
 ]
 requires-python=">=3.9"

@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: islasgeci/basic_python_project:latest
+    image: islasgeci/huevolizer:latest
     command: bash
     volumes:
       - $PWD:/workdir
