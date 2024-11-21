@@ -1,10 +1,10 @@
 version: "3.1"
 services:
-  islasgeci:
+  main_image:
     build:
       context: .
       dockerfile: Dockerfile
-    image: islasgeci/huevolizer:latest
+    image: mvillasante/huevolizer:latest
     command: bash
     volumes:
       - $PWD:/workdir
