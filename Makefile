@@ -14,7 +14,7 @@ all: check coverage mutants
 		tests
 
 module = huevolizer
-codecov_token = 6c56bccb-1758-4ed9-8161-97c845591c26
+codecov_token = 2ca2c234-c958-45ac-b0ae-bdb54d61ea66
 
 define lint
 	pylint \
