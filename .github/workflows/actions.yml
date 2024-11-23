@@ -42,13 +42,13 @@ jobs:
         docker image ls -a
     - name: Verifica el formato
       run: docker run mvillasante/huevolizer:latest make check
-    - name: Corre pruebas y evalúa cobertura
-      run: docker run --volume $PWD:/workdir mvillasante/huevolizer:latest make coverage
-    - name: Upload coverage reports to Codecov with GitHub Action
-      uses: codecov/codecov-action@main
+    - name: Run tests
+      run: pytest --cov --cov-report=xml
+
+    - name: Upload results to Codecov
+      uses: codecov/codecov-action@v4
       with:
-        files: ./coverage.xml
-        verbose: true
+        token: ${{ secrets.CODECOV_TOKEN }}
     - name: Create/Update tag
       uses: rickstaa/action-create-tag@v1.5.4
       with:
