@@ -2,8 +2,8 @@ from bootstrapping_tools import resample_data
 
 
 def calculate_average_per_sample(data):
-    samples_of_two = resample_data(data, None, 2)
-    return samples_of_two.iloc[0:5]
+    mean_of_two_values = data.rolling(2, step=1, closed="right").mean()
+    return mean_of_two_values.iloc[1::2, :]
 
 
 def set_eggs_by_hen(raw_data):

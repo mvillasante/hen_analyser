@@ -15,3 +15,4 @@ def test_calculate_average_per_sample():
     data = pd.DataFrame({"eggs_by_hen": [15, 5, 9, 11, 8, 12, 7, 13, 6, 14]})
     obtained = calculate_average_per_sample(data)
     assert len(obtained) == 5
+    assert obtained.iloc[0].values == 10
