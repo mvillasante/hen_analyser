@@ -1,4 +1,7 @@
-from bootstrapping_tools import resample_data
+def calculate_range_per_sample(data):
+    sample_size = 2
+    range_of_sample = abs(data.rolling(sample_size).max() - data.rolling(sample_size).min())
+    return range_of_sample.iloc[1::sample_size, :]
 
 
 def calculate_average_per_sample(data):
