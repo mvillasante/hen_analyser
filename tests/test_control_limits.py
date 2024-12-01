@@ -27,3 +27,4 @@ def test_calculate_average_per_sample():
 def test_calculate_range_per_sample():
     obtained = calculate_range_per_sample(sorted_data)
     assert len(obtained) == 5
+    assert obtained.iloc[0].values == 10
