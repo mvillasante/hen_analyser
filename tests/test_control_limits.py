@@ -2,9 +2,14 @@ from huevolizer.control_limits import (
     set_eggs_by_hen,
     calculate_average_per_sample,
     calculate_range_per_sample,
+    X_R_limits_calculator,
 )
 
 import pandas as pd
+
+
+def test_x_r_chart_limits_calculator():
+    chart_limits_calculator = X_R_limits_calculator()
 
 
 def test_set_data():
