@@ -11,10 +11,11 @@ class X_R_limits_calculator:
     def get_sigmas(self):
         average_per_sample = calculate_average_per_sample(self.data)
         mean_X = average_per_sample.mean()
+        desviation_X = average_per_sample.std()
         return {
             "average": mean_X,
-            "one_sigma": mean_X + average_per_sample.std(),
-            "two_sigma": 2 * average_per_sample.std(),
+            "one_sigma": mean_X + desviation_X,
+            "two_sigma": 2 * desviation_X,
         }
 
 
