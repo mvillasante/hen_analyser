@@ -1,9 +1,15 @@
+import pandas as pd
+
+
 class X_R_limits_calculator:
-    def __init__(self, raw_data):
+    def __init__(self, raw_data: pd.DataFrame):
         self.data = self.set_data(raw_data)
 
-    def set_data(self, data):
+    def set_data(self, data: pd.DataFrame):
         return set_eggs_by_hen(data)
+
+    def get_sigmas(self):
+        return {"average": 1}
 
 
 def calculate_range_per_sample(data):
