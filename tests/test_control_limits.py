@@ -17,7 +17,7 @@ def test_x_r_chart_limits_calculator():
     expected_keys = ("average", "one_sigma")
     print(obtained)
     assert obtained["average"] == 1.5
-    assert obtained["one_sigma"] is not None
+    assert obtained["one_sigma"] > obtained["average"]
     assert obtained["two_sigma"] is not None
 
 
