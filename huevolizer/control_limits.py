@@ -17,6 +17,9 @@ class X_R_limits_calculator:
             "one_sigma": mean_X + desviation_X,
             "two_sigma": mean_X + 2 * desviation_X,
             "three_sigma": mean_X + 3 * desviation_X,
+            "minus_one_sigma": mean_X - desviation_X,
+            "minus_two_sigma": mean_X - 2 * desviation_X,
+            "minus_three_sigma": mean_X - 3 * desviation_X,
         }
 
 
