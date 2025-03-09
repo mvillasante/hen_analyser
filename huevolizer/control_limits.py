@@ -13,6 +13,7 @@ class X_R_limits_calculator:
         return {
             "average": average_per_sample.mean(),
             "one_sigma": average_per_sample.std(),
+            "two_sigma": 2 * average_per_sample.std(),
         }
 
 
