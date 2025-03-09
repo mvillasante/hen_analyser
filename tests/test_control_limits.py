@@ -15,9 +15,9 @@ def test_x_r_chart_limits_calculator():
     assert "eggs_by_hen" in obtained.columns
     obtained = chart_limits_calculator.get_sigmas()
     expected_keys = ("average", "one_sigma")
-    assert expected_keys in obtained.keys()
     print(obtained)
     assert obtained["average"] == 1.5
+    assert obtained["one_sigma"] is not None
 
 
 def test_set_data():

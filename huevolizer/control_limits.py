@@ -9,7 +9,10 @@ class X_R_limits_calculator:
         return set_eggs_by_hen(data)
 
     def get_sigmas(self):
-        return {"average": calculate_average_per_sample(self.data).mean()}
+        return {
+            "average": calculate_average_per_sample(self.data).mean(),
+            "one_sigma": calculate_average_per_sample(self.data).std(),
+        }
 
 
 def calculate_range_per_sample(data):
