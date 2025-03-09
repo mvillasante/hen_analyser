@@ -6,7 +6,6 @@ from huevolizer.control_limits import (
 )
 
 import pandas as pd
-import pytest
 
 
 def test_x_r_chart_limits_calculator():
@@ -14,6 +13,9 @@ def test_x_r_chart_limits_calculator():
     chart_limits_calculator = X_R_limits_calculator(raw_data)
     obtained = chart_limits_calculator.data
     assert "eggs_by_hen" in obtained.columns
+    obtained = chart_limits_calculator.get_sigmas()
+    expected_keys = ["average"]
+    assert expected_keys in obtained.keys()
 
 
 def test_set_data():
