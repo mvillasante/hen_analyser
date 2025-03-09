@@ -9,11 +9,12 @@ import pandas as pd
 import pytest
 
 
-@pytest.mark.skip("not yet")
 def test_x_r_chart_limits_calculator():
     raw_data = pd.DataFrame({"Huevos": [1, 2, 3], "Gallinas": [1, 2, 1]})
     chart_limits_calculator = X_R_limits_calculator()
     chart_limits_calculator.set_data(raw_data)
+    obtained = chart_limits_calculator.data
+    assert "eggs_by_hen" in obtained.columns
 
 
 def test_set_data():
