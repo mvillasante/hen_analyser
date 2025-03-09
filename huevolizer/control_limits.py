@@ -1,7 +1,14 @@
+class X_R_limits_calculator:
+    def __init__(self):
+        pass
+
+    def set_data(self, data):
+        pass
+
+
 def calculate_range_per_sample(data):
     sample_size = 2
     range_of_sample = abs(data.rolling(sample_size).max() - data.rolling(sample_size).min())
-    print(range_of_sample)
     return range_of_sample.eggs_by_hen[1::sample_size]
 
 
