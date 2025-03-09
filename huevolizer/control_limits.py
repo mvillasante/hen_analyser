@@ -8,7 +8,7 @@ class X_R_limits_calculator:
     def set_data(self, data: pd.DataFrame):
         return set_eggs_by_hen(data)
 
-    def get_sigmas(self):
+    def get_X_limits(self):
         average_per_sample = calculate_average_per_sample(self.data)
         mean_X = average_per_sample.mean()
         desviation_X = average_per_sample.std()

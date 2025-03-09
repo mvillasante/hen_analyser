@@ -13,7 +13,7 @@ def test_x_r_chart_limits_calculator():
     chart_limits_calculator = X_R_limits_calculator(raw_data)
     obtained = chart_limits_calculator.data
     assert "eggs_by_hen" in obtained.columns
-    obtained = chart_limits_calculator.get_sigmas()
+    obtained = chart_limits_calculator.get_X_limits()
     expected_keys = ("average", "one_sigma")
     print(obtained)
     assert obtained["average"] == 1.5
