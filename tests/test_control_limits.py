@@ -18,7 +18,7 @@ def test_x_r_chart_limits_calculator():
     print(obtained)
     assert obtained["average"] == 1.5
     assert obtained["one_sigma"] > obtained["average"]
-    assert obtained["two_sigma"] is not None
+    assert obtained["two_sigma"] > obtained["one_sigma"]
 
 
 def test_set_data():
