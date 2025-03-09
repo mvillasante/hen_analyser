@@ -1,9 +1,9 @@
 class X_R_limits_calculator:
-    def __init__(self):
-        pass
+    def __init__(self, raw_data):
+        self.data = self.set_data(raw_data)
 
     def set_data(self, data):
-        self.data = set_eggs_by_hen(data)
+        return set_eggs_by_hen(data)
 
 
 def calculate_range_per_sample(data):
