@@ -9,13 +9,14 @@ import pandas as pd
 
 
 def test_x_r_chart_limits_calculator():
-    raw_data = pd.DataFrame({"Huevos": [1, 2, 3], "Gallinas": [1, 2, 1]})
+    raw_data = pd.DataFrame({"Huevos": [1, 2, 6, 2], "Gallinas": [1, 2, 3, 1]})
     chart_limits_calculator = X_R_limits_calculator(raw_data)
     obtained = chart_limits_calculator.data
     assert "eggs_by_hen" in obtained.columns
     obtained = chart_limits_calculator.get_sigmas()
     expected_keys = "average"
     assert expected_keys in obtained.keys()
+    assert obtained["average"] == 1.5
 
 
 def test_set_data():
