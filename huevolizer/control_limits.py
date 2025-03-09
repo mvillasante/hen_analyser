@@ -3,7 +3,7 @@ class X_R_limits_calculator:
         pass
 
     def set_data(self, data):
-        pass
+        self.data = set_eggs_by_hen(data)
 
 
 def calculate_range_per_sample(data):
