@@ -15,9 +15,9 @@ jobs:
       env:
        PWD: "${{ github.workspace }}"
     - name: Verifica el formato 🎨
-      run: docker compose run mvillasante/huevolizer:latest bash -c "make check & make install"
+      run: docker compose run main_image bash -c "make check & make install"
     - name: Run tests and coverage 🐍🧪☂️
-      run: docker compose run mvillasante/huevolizer:latest make coverage
+      run: docker compose run main_image make coverage
     - name: Upload coverage reports to Codecov with GitHub Action ☂️
       uses: codecov/codecov-action@main
       with:
