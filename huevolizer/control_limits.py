@@ -7,8 +7,8 @@ class X_R_limits_calculator:
         self.x_s = calculate_average_per_sample(self.data)
         self.r_s = calculate_range_per_sample(self.data)
 
-    def set_data(self, data: pd.DataFrame):
-        return self.set_eggs_by_hen(data)
+    def set_data(self, raw_data: pd.DataFrame):
+        return self.set_eggs_by_hen(raw_data)
 
     def set_eggs_by_hen(self, raw_data):
         raw_data["eggs_by_hen"] = raw_data.Huevos / raw_data.Gallinas
