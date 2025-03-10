@@ -18,31 +18,9 @@ jobs:
         context: .
         tags: mvillasante/huevolizer:latest
         outputs: type=docker,dest=/tmp/image.tar
-    - name: Upload artifact
-      uses: actions/upload-artifact@main
-      with:
-        name: image
-        path: /tmp/image.tar
-
-  test-module:
-    name: Test Python module 🐍
-    needs: build-image
-    runs-on: ubuntu-latest
-    steps:
-    - name: Copia repositorio
-      uses: actions/checkout@main
-    - name: Download artifact
-      uses: actions/download-artifact@main
-      with:
-        name: image
-        path: /tmp
-    - name: Load image
-      run: |
-        docker load --input /tmp/image.tar
-        docker image ls -a
     - name: Verifica el formato
       run: docker run mvillasante/huevolizer:latest bash -c "make check & make install"
-    - name: Corre pruebas y evalúa cobertura
+    - name: Test Python module 🐍
       run: docker run --volume $PWD:/workdir mvillasante/huevolizer:latest make coverage
     - name: Upload coverage reports to Codecov with GitHub Action
       uses: codecov/codecov-action@main
