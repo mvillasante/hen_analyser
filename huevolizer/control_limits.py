@@ -24,8 +24,7 @@ class X_R_limits_calculator:
         }
 
     def get_R_limits(self):
-        range_per_sample = self.r_s
-        mean_R = range_per_sample.mean()
+        mean_R = self.r_s.mean()
         return {
             "average": mean_R,
         }
