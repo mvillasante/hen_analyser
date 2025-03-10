@@ -22,6 +22,13 @@ class X_R_limits_calculator:
             "minus_three_sigma": mean_X - 3 * desviation_X,
         }
 
+    def get_R_limits(self):
+        average_per_sample = calculate_average_per_sample(self.data)
+        mean_X = average_per_sample.mean()
+        return {
+            "average": mean_X,
+        }
+
 
 def calculate_range_per_sample(data):
     sample_size = 2
