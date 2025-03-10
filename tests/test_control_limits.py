@@ -25,6 +25,12 @@ def test_x_r_chart_limits_calculator():
     chart_limits_calculator = X_R_limits_calculator(raw_data)
     obtained = chart_limits_calculator.get_R_limits()
     assert obtained["average"] == 0.4545454545454545
+    assert obtained["one_sigma"] > obtained["average"]
+    assert obtained["two_sigma"] > obtained["one_sigma"]
+    assert obtained["three_sigma"] > obtained["two_sigma"]
+    assert obtained["minus_one_sigma"] < obtained["average"]
+    assert obtained["minus_two_sigma"] < obtained["minus_one_sigma"]
+    assert obtained["minus_three_sigma"] < obtained["minus_two_sigma"]
 
 
 def test_set_data():
