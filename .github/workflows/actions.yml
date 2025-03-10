@@ -5,24 +5,26 @@ on:
       - develop
 jobs:
   build-image:
-    name: Build Docker image 🐋
+    name: Test module 👨🏽❤️🩹
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repo
       uses: actions/checkout@main
-    - name: Run docker compose
+    - name: Build Docker image 🐋 with compose 🐳
       uses: hoverkraft-tech/compose-action@v2.0.1
-    - name: Verifica el formato
+      env:
+       PWD: "${{ github.workspace }}"
+    - name: Verifica el formato 🎨
       run: docker compose run mvillasante/huevolizer:latest bash -c "make check & make install"
-    - name: Test Python module 🐍
+    - name: Run tests and coverage 🐍🧪☂️
       run: docker compose run mvillasante/huevolizer:latest make coverage
-    - name: Upload coverage reports to Codecov with GitHub Action
+    - name: Upload coverage reports to Codecov with GitHub Action ☂️
       uses: codecov/codecov-action@main
       with:
         files: ./coverage.xml
         verbose: true
         token: ${{ secrets.CODECOV }}
-    - name: Create/Update tag
+    - name: Create/Update tag 🎏
       uses: rickstaa/action-create-tag@v1.5.4
       with:
         tag: "latest"
