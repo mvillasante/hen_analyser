@@ -10,9 +10,8 @@ class X_R_limits_calculator:
         return set_eggs_by_hen(data)
 
     def get_X_limits(self):
-        average_per_sample = self.x_s
-        mean_X = average_per_sample.mean()
-        desviation_X = average_per_sample.std()
+        mean_X = self.x_s.mean()
+        desviation_X = self.x_s.std()
         return {
             "average": mean_X,
             "one_sigma": mean_X + desviation_X,
