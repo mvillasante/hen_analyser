@@ -23,10 +23,11 @@ class X_R_limits_calculator:
         }
 
     def get_R_limits(self):
-        average_per_sample = calculate_average_per_sample(self.data)
-        mean_X = average_per_sample.mean()
+        range_per_sample = calculate_range_per_sample(self.data)
+        print(range_per_sample)
+        mean_R = range_per_sample.mean()
         return {
-            "average": mean_X,
+            "average": mean_R,
         }
 
 
