@@ -8,7 +8,11 @@ class X_R_limits_calculator:
         self.r_s = calculate_range_per_sample(self.data)
 
     def set_data(self, data: pd.DataFrame):
-        return set_eggs_by_hen(data)
+        return self.set_eggs_by_hen(data)
+
+    def set_eggs_by_hen(self, raw_data):
+        raw_data["eggs_by_hen"] = raw_data.Huevos / raw_data.Gallinas
+        return raw_data
 
     def get_X_limits(self):
         mean_X = self.x_s.mean()
