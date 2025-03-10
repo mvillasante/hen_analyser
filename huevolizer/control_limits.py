@@ -4,12 +4,13 @@ import pandas as pd
 class X_R_limits_calculator:
     def __init__(self, raw_data: pd.DataFrame):
         self.data = self.set_data(raw_data)
+        self.x_s = calculate_average_per_sample(self.data)
 
     def set_data(self, data: pd.DataFrame):
         return set_eggs_by_hen(data)
 
     def get_X_limits(self):
-        average_per_sample = calculate_average_per_sample(self.data)
+        average_per_sample = self.x_s
         mean_X = average_per_sample.mean()
         desviation_X = average_per_sample.std()
         return {
