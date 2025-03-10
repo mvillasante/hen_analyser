@@ -25,8 +25,16 @@ class X_R_limits_calculator:
 
     def get_R_limits(self):
         mean_R = self.r_s.mean()
+        desviation_R = self.r_s.std()
+        print(desviation_R)
         return {
             "average": mean_R,
+            "one_sigma": mean_R + desviation_R,
+            "two_sigma": mean_R + 2 * desviation_R,
+            "three_sigma": mean_R + 3 * desviation_R,
+            "minus_one_sigma": mean_R - desviation_R,
+            "minus_two_sigma": mean_R - 2 * desviation_R,
+            "minus_three_sigma": mean_R - 3 * desviation_R,
         }
 
 
