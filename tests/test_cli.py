@@ -12,9 +12,9 @@ def tests_write_control_chart_data():
     assert result.exit_code == 0
     assert " Path of daily egg data]" in result.stdout
 
-    data_path = "tests/data/eggs.csv"
+    data_path = "tests/data/producción_diaria.csv"
     output_path = "salida.csv"
-    gtt.if_exist_remove(data_path)
+    gtt.if_exist_remove(output_path)
     result = runner.invoke(
         cli,
         [
