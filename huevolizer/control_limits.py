@@ -47,10 +47,10 @@ def calculate_range_per_sample(data):
     range_of_sample = abs(
         data.eggs_by_hen.rolling(sample_size).max() - data.eggs_by_hen.rolling(sample_size).min()
     )
-    return range_of_sample[1::sample_size]
+    return range_of_sample[1:]
 
 
 def calculate_average_per_sample(data):
     sample_size = 2
     mean_of_two_values = data.eggs_by_hen.rolling(sample_size).mean()
-    return mean_of_two_values[1::sample_size]
+    return mean_of_two_values[1:]
