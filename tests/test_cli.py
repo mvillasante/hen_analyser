@@ -7,7 +7,7 @@ runner = CliRunner()
 
 
 def tests_write_control_chart_data():
-    result = runner.invoke(cli, ["--help"])
+    result = runner.invoke(cli, ["write-control-chart-data", "--help"])
     assert result.exit_code == 0
 
 
