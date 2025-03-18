@@ -1,5 +1,6 @@
 from huevolizer.cli import cli
 
+import geci_test_tools as gtt
 from typer.testing import CliRunner
 
 
@@ -10,6 +11,20 @@ def tests_write_control_chart_data():
     result = runner.invoke(cli, ["write-control-chart-data", "--help"])
     assert result.exit_code == 0
     assert " Path of daily egg data]" in result.stdout
+
+    data_path = "tests/data/eggs.csv"
+    output_path = "salida.csv"
+    gtt.if_exist_remove(data_path)
+    result = runner.invoke(
+        cli,
+        [
+            "write-control-chart-data",
+            "--data-path",
+            data_path,
+        ],
+    )
+    assert result.exit_code == 0
+    gtt.assert_exist(output_path)
 
 
 def test_version():
