@@ -4,8 +4,14 @@ import pandas as pd
 class X_R_limits_calculator:
     def __init__(self, raw_data: pd.DataFrame):
         self.data = self.set_data(raw_data)
+        print(self.data.dtypes)
         self.x_s = calculate_average_per_sample(self.data)
         self.r_s = calculate_range_per_sample(self.data)
+
+    def save_x_r(self, output_path: str):
+        pd.DataFrame({"Fecha": self.data.Fecha.loc[1:], "X": self.x_s}).to_csv(
+            output_path, index=False
+        )
 
     def set_data(self, raw_data: pd.DataFrame):
         return self.set_eggs_by_hen(raw_data)
@@ -30,7 +36,6 @@ class X_R_limits_calculator:
     def get_R_limits(self):
         mean_R = self.r_s.mean()
         desviation_R = self.r_s.std()
-        print(desviation_R)
         return {
             "average": mean_R,
             "one_sigma": mean_R + desviation_R,
