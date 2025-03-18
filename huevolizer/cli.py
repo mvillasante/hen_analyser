@@ -6,7 +6,7 @@ cli = typer.Typer()
 
 
 @cli.command()
-def write_control_chart_data():
+def write_control_chart_data(data_path: str = typer.Option("Path of daily egg data")):
     pass
 
 

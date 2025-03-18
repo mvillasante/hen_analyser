@@ -9,7 +9,7 @@ runner = CliRunner()
 def tests_write_control_chart_data():
     result = runner.invoke(cli, ["write-control-chart-data", "--help"])
     assert result.exit_code == 0
-    assert " Path of daily egg data " in result.stdout
+    assert " Path of daily egg data]" in result.stdout
 
 
 def test_version():
