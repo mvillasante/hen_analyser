@@ -1,6 +1,7 @@
 from huevolizer.cli import cli
 
 import geci_test_tools as gtt
+import pandas as pd
 from typer.testing import CliRunner
 
 
@@ -25,6 +26,9 @@ def tests_write_control_chart_data():
     )
     assert result.exit_code == 0
     gtt.assert_exist(output_path)
+    obtained = pd.read_csv(output_path)
+    expected_columns = ["Fecha", "X"]
+    assert obtained.columns.tolist() == expected_columns
 
 
 def test_version():
