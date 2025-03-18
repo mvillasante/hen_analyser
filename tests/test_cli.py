@@ -27,7 +27,7 @@ def tests_write_control_chart_data():
     assert result.exit_code == 0
     gtt.assert_exist(output_path)
     obtained = pd.read_csv(output_path)
-    expected_columns = ["Fecha", "X"]
+    expected_columns = ["Fecha", "X", "R"]
     assert obtained.columns.tolist() == expected_columns
 
 
