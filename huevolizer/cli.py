@@ -7,7 +7,7 @@ cli = typer.Typer()
 
 @cli.command()
 def write_control_chart_data(data_path: str = typer.Option("Path of daily egg data")):
-    pass
+    pd.read_csv(data_path).to_csv("salida.csv")
 
 
 @cli.command()
