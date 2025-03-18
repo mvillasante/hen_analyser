@@ -11,6 +11,9 @@ home-page = "https://github.com/mvillasante/hen_analyser"
 module = "huevolizer"
 requires = [
 	"pandas",
-	"pandas-stubs"
+	"pandas-stubs",
+	"typer"
 ]
 requires-python=">=3.9"
+[tool.flit.scripts]
+huevolizer = "huevolizer.cli:cli"
