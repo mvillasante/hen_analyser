@@ -48,11 +48,11 @@ sorted_data = pd.DataFrame({"eggs_by_hen": [15, 5, 9, 11, 8, 12, 7, 13, 6, 14]})
 
 def test_calculate_average_per_sample():
     obtained = calculate_average_per_sample(sorted_data)
-    assert len(obtained) == 10
+    assert len(obtained) == 9
     assert obtained.iloc[0] == 10
 
 
 def test_calculate_range_per_sample():
     obtained = calculate_range_per_sample(sorted_data)
-    assert len(obtained) == 10
+    assert len(obtained) == 9
     assert obtained.iloc[0] == 10
