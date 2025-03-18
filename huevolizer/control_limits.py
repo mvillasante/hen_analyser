@@ -9,9 +9,9 @@ class X_R_limits_calculator:
         self.r_s = calculate_range_per_sample(self.data)
 
     def save_x_r(self, output_path: str):
-        pd.DataFrame({"Fecha": self.data.Fecha.loc[1:], "X": self.x_s}).set_index("Fecha").to_csv(
-            output_path
-        )
+        pd.DataFrame({"Fecha": self.data.Fecha.loc[1:], "X": self.x_s, "R": self.r_s}).set_index(
+            "Fecha"
+        ).to_csv(output_path)
 
     def set_data(self, raw_data: pd.DataFrame):
         return self.set_eggs_by_hen(raw_data)
