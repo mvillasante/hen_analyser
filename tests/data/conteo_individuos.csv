@@ -1,6 +1,36 @@
-Fecha,Gallinas,Gallos,Pollos
-2021-03-06,9,2,8
-2021-04-30,16,2,8
-2021-05-30,15,2,7
-2021-07-15,21,2,1
-2021-08-01,19,2,4
+Fecha,Gallinas,Gallos,Pollos,Observaciones
+2021-03-06,9,2,3,Uno es patito
+2021-04-30,16,2,8,Se extravia patito; muere el pollito más chiquito de los tres; 4 son polluelas
+2021-05-30,15,2,7,muere la patas negras
+2021-07-15,21,2,1,
+2021-08-01,19,2,4,
+2022-08-01,11,2,4,
+2023-01-21,15,1,
+2023-04-25,15,1,5,
+2023-06-06,15,,4,ataque de las puas; pollito desaparecido
+2023-07-07,13,,7,tres pollitos de jorge matematico; una galli pal caldo y otro de los puás
+2023-09-14,12,,7,desaparece gallina
+2023-10-15,16,,3,
+2024-04-30,15,2,1,
+2024-10-31,15,3,,
+2024-11-02,15,1,,
+2024-12-01,14,1,,una gallina estaba echada
+2024-12-21,15,1,9
+2025-02-06,15,1,8,
+2025-02-07,14,1,8,murió gallina negra
+2025-02-28,11,1,8,matamos 3 gallis pal caldo
+2025-03-09,10,1,8,gallina echada
+2025-04-18,11,1,8,
+2025-05-12,15,5,,hace 5 días aumentaron huevos diarios
+2025-05-18,14,5,,
+2025-06-28,13,4,,muere gallina roja
+2025-07-28,13,1,,menos tres para comida de papá
+2025-09-02,12,1,,gallina echada
+2025-09-17,13,1,,abortó misión la galli echada
+2025-10-12,12,1,,muere galli con gusanos
+2025-10-29,8,1,,tres pal caldo
+2025-11-06,8,1,6,pollitos de 3 semana
+2025-12-10,8,1,5,encontramos pollito descabezado; hay tlacuaches
+
+
+
