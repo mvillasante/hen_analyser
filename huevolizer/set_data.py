@@ -9,4 +9,5 @@ def fill_missing_dates(data):
 
 
 def join_daily_eggs_with_individual_counts(daily_eggs, individuals_count):
-    return daily_eggs.set_index("Fecha").join(individuals_count.set_index("Fecha"), how="left")
+    filled_individuals_count = fill_missing_dates(individuals_count)
+    return daily_eggs.set_index("Fecha").join(filled_individuals_count, how="left").ffill()
