@@ -1,6 +1,7 @@
 from huevolizer.set_data import fill_missing_dates
 
 import pandas as pd
+from numpy import datetime_as_string
 
 
 def test_fill_missing_date():
@@ -13,5 +14,5 @@ def test_fill_missing_date():
         }
     )
     obtained = fill_missing_dates(data)
-    assert obtained.first_valid_index() == obtained.index[0]
+    assert datetime_as_string(obtained.index[0], unit="D") == "2021-04-30"
     assert len(obtained) >= 30
