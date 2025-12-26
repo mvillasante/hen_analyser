@@ -14,3 +14,4 @@ def test_fill_missing_date():
     )
     obtained = fill_missing_dates(data)
     assert obtained.first_valid_index() == obtained.index[0]
+    assert len(obtained) >= 30
