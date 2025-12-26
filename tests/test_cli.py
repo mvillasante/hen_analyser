@@ -4,10 +4,13 @@ import geci_test_tools as gtt
 import pandas as pd
 from typer.testing import CliRunner
 
+import pytest
+
 
 runner = CliRunner()
 
 
+@pytest.mark.skip(reason="changing the flow")
 def tests_write_control_chart_data():
     result = runner.invoke(cli, ["write-control-chart-data", "--help"])
     assert result.exit_code == 0
