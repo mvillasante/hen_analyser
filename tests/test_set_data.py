@@ -25,8 +25,10 @@ def test_fill_missing_date():
 def test_join_daily_eggs_with_individual_counts():
     daily_eggs_data = pd.DataFrame(
         {
-            "Fecha": ["2021-04-30", "2021-04-31"],
-            "Huevos": [8, 7],
+            "Fecha": ["2021-04-30", "2021-04-31", "2021-05-30"],
+            "Huevos": [5, 8, 7],
         }
     )
     obtained = join_daily_eggs_with_individual_counts(daily_eggs_data, individual_data)
+    is_without_na = not obtained.Gallinas.isna().any()
+    assert is_without_na
