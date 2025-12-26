@@ -17,4 +17,4 @@ def test_fill_missing_date():
     print(obtained)
     assert obtained.index.values[0] == "2021-04-30"
     assert len(obtained) >= 30
-    assert obtained.Gallinas[1] == 16
+    assert obtained.Gallinas.iloc[1] == 16
