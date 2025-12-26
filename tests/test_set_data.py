@@ -14,5 +14,5 @@ def test_fill_missing_date():
         }
     )
     obtained = fill_missing_dates(data)
-    assert datetime_as_string(obtained.index[0], unit="D") == "2021-04-30"
+    assert datetime_as_string(obtained.index.values[0], unit="D") == "2021-04-30"
     assert len(obtained) >= 30
