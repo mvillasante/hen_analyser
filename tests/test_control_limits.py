@@ -46,9 +46,31 @@ def test_x_r_chart_limits_calculator():
     assert obtained["minus_two_sigma"] < obtained["minus_one_sigma"]
     assert obtained["minus_three_sigma"] < obtained["minus_two_sigma"]
     raw_data = pd.DataFrame(
-        {"Huevos": [6, 1, 6, 1, 4, 8, 7, 1], "Gallinas": [11, 11, 11, 11, 11, 11, 11, 11]}
+        {
+            "Fecha": [
+                "2021-01-01",
+                "2021-01-02",
+                "2021-01-03",
+                "2021-01-04",
+                "2021-01-05",
+                "2021-01-06",
+                "2021-01-07",
+                "2021-01-08",
+            ],
+            "Huevos": [6, 1, 6, 1, 4, 8, 7, 1],
+        }
     )
-    chart_limits_calculator = X_R_limits_calculator(raw_data)
+    individual_data = pd.DataFrame(
+        {
+            "Fecha": [
+                "2021-01-01",
+            ],
+            "Gallinas": [11],
+            "Gallos": [2],
+            "Pollos": [8],
+        }
+    )
+    chart_limits_calculator = xxX_R_limits_calculator(raw_data, individual_data)
     obtained = chart_limits_calculator.get_R_limits()
     assert obtained["average"] == 0.3766233766233765
     assert obtained["one_sigma"] > obtained["average"]
