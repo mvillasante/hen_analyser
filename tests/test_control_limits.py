@@ -2,6 +2,7 @@ from huevolizer.control_limits import (
     calculate_average_per_sample,
     calculate_range_per_sample,
     X_R_limits_calculator,
+    xxX_R_limits_calculator,
 )
 
 import pandas as pd
@@ -22,13 +23,18 @@ def test_x_r_chart_limits_calculator():
 
     individual_data = pd.DataFrame(
         {
-            "Fecha": ["2021-01-01", "2021-04-04"],
-            "Gallinas": [16, 15],
-            "Gallos": [2, 2],
-            "Pollos": [8, 7],
+            "Fecha": [
+                "2021-01-01",
+                "2021-01-02",
+                "2021-01-03",
+                "2021-01-04",
+            ],
+            "Gallinas": [1, 2, 3, 1],
+            "Gallos": [2, 2, 2, 3],
+            "Pollos": [8, 7, 8, 7],
         }
     )
-    chart_limits_calculator = X_R_limits_calculator(raw_data)
+    chart_limits_calculator = xxX_R_limits_calculator(raw_data, individual_data)
     obtained = chart_limits_calculator.data
     assert "eggs_by_hen" in obtained.columns
     obtained = chart_limits_calculator.get_X_limits()
