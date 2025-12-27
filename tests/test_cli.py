@@ -24,6 +24,8 @@ def tests_write_control_chart_data():
             "write-control-chart-data",
             "--data-path",
             data_path,
+            "--individuals-count-path",
+            "tests/data/conteo_individuos.csv",
         ],
     )
     assert result.exit_code == 0
