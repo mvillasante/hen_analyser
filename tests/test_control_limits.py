@@ -8,7 +8,26 @@ import pandas as pd
 
 
 def test_x_r_chart_limits_calculator():
-    raw_data = pd.DataFrame({"Huevos": [1, 2, 6, 2], "Gallinas": [1, 2, 3, 1]})
+    raw_data = pd.DataFrame(
+        {
+            "Fecha": [
+                "2021-01-01",
+                "2021-01-02",
+                "2021-01-03",
+                "2021-01-04",
+            ],
+            "Huevos": [1, 2, 6, 2],
+        }
+    )
+
+    individual_data = pd.DataFrame(
+        {
+            "Fecha": ["2021-01-01", "2021-04-04"],
+            "Gallinas": [16, 15],
+            "Gallos": [2, 2],
+            "Pollos": [8, 7],
+        }
+    )
     chart_limits_calculator = X_R_limits_calculator(raw_data)
     obtained = chart_limits_calculator.data
     assert "eggs_by_hen" in obtained.columns
