@@ -1,7 +1,7 @@
 from huevolizer.control_limits import (
     calculate_average_per_sample,
     calculate_range_per_sample,
-    xxX_R_limits_calculator,
+    X_R_limits_calculator,
 )
 
 import pandas as pd
@@ -33,7 +33,7 @@ def test_x_r_chart_limits_calculator():
             "Pollos": [8, 7, 8, 7],
         }
     )
-    chart_limits_calculator = xxX_R_limits_calculator(raw_data, individual_data)
+    chart_limits_calculator = X_R_limits_calculator(raw_data, individual_data)
     obtained = chart_limits_calculator.data
     assert "eggs_by_hen" in obtained.columns
     obtained = chart_limits_calculator.get_X_limits()
@@ -69,7 +69,7 @@ def test_x_r_chart_limits_calculator():
             "Pollos": [8],
         }
     )
-    chart_limits_calculator = xxX_R_limits_calculator(raw_data, individual_data)
+    chart_limits_calculator = X_R_limits_calculator(raw_data, individual_data)
     obtained = chart_limits_calculator.get_R_limits()
     assert obtained["average"] == 0.3766233766233765
     assert obtained["one_sigma"] > obtained["average"]
@@ -90,7 +90,7 @@ def test_set_data():
             "Pollos": [8, 7, 6],
         }
     )
-    chart_limits_calculator = xxX_R_limits_calculator(data, individual_data)
+    chart_limits_calculator = X_R_limits_calculator(data, individual_data)
     obtained = chart_limits_calculator.set_data(data, individual_data)
     expected_column = "eggs_by_hen"
     assert expected_column in obtained.columns

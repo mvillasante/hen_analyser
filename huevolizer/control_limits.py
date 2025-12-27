@@ -2,7 +2,7 @@ from huevolizer.set_data import join_daily_eggs_with_individual_counts
 import pandas as pd
 
 
-class xxX_R_limits_calculator:
+class X_R_limits_calculator:
     def __init__(self, raw_data: pd.DataFrame, individual_counts: pd.DataFrame):
         self.data = self.set_data(raw_data, individual_counts)
         self.x_s = calculate_average_per_sample(self.data)
