@@ -91,10 +91,9 @@ def test_set_data():
         }
     )
     chart_limits_calculator = X_R_limits_calculator(data, individual_data)
-    obtained = chart_limits_calculator.set_data(data, individual_data)
     expected_column = "eggs_by_hen"
-    assert expected_column in obtained.columns
-    assert (obtained.eggs_by_hen == [1, 1, 3]).all()
+    assert expected_column in chart_limits_calculator.data.columns
+    assert (chart_limits_calculator.data.eggs_by_hen == [1, 1, 3]).all()
 
 
 sorted_data = pd.DataFrame({"eggs_by_hen": [15, 5, 9, 11, 8, 12, 7, 13, 6, 14]})
