@@ -14,6 +14,22 @@ def tests_plot_control_chart():
     result = runner.invoke(cli, ["plot-control-chart", "--help"])
     assert result.exit_code == 0
 
+    data_path = "tests/data/X_R_control_data.csv"
+    output_path = "X_R_plot.png"
+    gtt.if_exist_remove(output_path)
+    result = runner.invoke(
+        cli,
+        [
+            "plot-control-chart",
+            "--data-path",
+            data_path,
+            "--output-path",
+            output_path,
+        ],
+    )
+    assert result.exit_code == 0
+    gtt.assert_exist(output_path)
+
 
 def tests_write_control_chart_data():
     result = runner.invoke(cli, ["write-control-chart-data", "--help"])
