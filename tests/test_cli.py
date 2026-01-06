@@ -10,6 +10,11 @@ import pytest
 runner = CliRunner()
 
 
+def tests_plot_control_chart():
+    result = runner.invoke(cli, ["plot-control-chart", "--help"])
+    assert result.exit_code == 0
+
+
 def tests_write_control_chart_data():
     result = runner.invoke(cli, ["write-control-chart-data", "--help"])
     assert result.exit_code == 0
