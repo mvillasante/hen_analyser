@@ -7,3 +7,19 @@ services:
     command: bash
     volumes:
       - $PWD:/workdir
+      # X11 socket for display forwarding
+      - /tmp/.X11-unix:/tmp/.X11-unix:rw
+      # Xauthority file for authentication
+      - ~/.Xauthority:/tmp/.Xauthority:rw
+    environment:
+      - DISPLAY=${DISPLAY}
+      - QT_X11_NO_MITSHM=1
+      - XAUTHORITY=/tmp/.Xauthority
+      - PYTHONUNBUFFERED=1
+    working_dir: /workdir
+    network_mode: host  # Required for X11 forwarding on some systems
+    # Alternative to network_mode=host (use one or the other):
+    # networks:
+    #   - x11-network
+    stdin_open: true
+    tty: true
