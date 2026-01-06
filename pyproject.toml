@@ -12,6 +12,7 @@ module = "huevolizer"
 requires = [
 	"pandas",
 	"pandas-stubs",
+	"pyshewhart",
 	"typer"
 ]
 requires-python=">=3.9"
