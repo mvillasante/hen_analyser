@@ -23,3 +23,11 @@ services:
     #   - x11-network
     stdin_open: true
     tty: true
+  streamlit:
+    image: mvillasante/huevolizer:latest
+    entrypoint: ["streamlit", "run", "huevolizer/streamlit_app.py", "--server.port=8502", "--server.address=0.0.0.0"]
+    ports:
+      - "8502:8502"
+    volumes:
+      - $PWD:/workdir
+
