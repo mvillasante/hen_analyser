@@ -1,8 +1,6 @@
 from huevolizer.set_data import fill_missing_dates, join_daily_eggs_with_individual_counts
 
 import pandas as pd
-from numpy import datetime_as_string
-
 
 individual_data = pd.DataFrame(
     {
