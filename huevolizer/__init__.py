@@ -2,3 +2,4 @@
 
 __version__ = "0.0.1"
 from .control_limits import *  # noqa
+from .cli import write_control_chart_data  # noqa
