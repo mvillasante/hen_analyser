@@ -83,7 +83,8 @@ def render_control_chart() -> None:
     if not required_cols.issubset(xr_data.columns):
         st.warning("Los datos de control no contienen las columnas esperadas.")
         return
-    pyshewhart.XbarR(xr_data["Fecha"], xr_data["X"], sample_size=SAMPLE_SIZE)
+    xr_last_n_rows = xr_data[-100:].reset_index(drop=True)
+    pyshewhart.XbarR(xr_last_n_rows["Fecha"], xr_last_n_rows["X"], sample_size=SAMPLE_SIZE)
     st.pyplot(plt.gcf())
     plt.close()  # clean up the figure to avoid memory leaks
 
