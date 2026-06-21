@@ -11,7 +11,7 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@main
     - name: Build Docker image 🐋 with compose 🐳
-      uses: hoverkraft-tech/compose-action@v2.0.1
+      uses: hoverkraft-tech/compose-action@main
       env:
        PWD: "${{ github.workspace }}"
     - name: Verifica el formato 🎨
@@ -25,7 +25,7 @@ jobs:
         verbose: true
         token: ${{ secrets.CODECOV }}
     - name: Create/Update tag 🎏
-      uses: rickstaa/action-create-tag@v1.5.4
+      uses: rickstaa/action-create-tag@main
       with:
         tag: "latest"
         message: "Latest release"
