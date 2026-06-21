@@ -10,7 +10,7 @@ description-file = "README.md"
 home-page = "https://github.com/mvillasante/hen_analyser"
 module = "huevolizer"
 requires = [
-	"matplotlib==3.9"
+	"matplotlib==3.9",
 	"pandas",
 	"pandas-stubs",
 	"pyshewhart",
