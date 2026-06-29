@@ -19,4 +19,3 @@ with col1:
 with col2:
     st.subheader("Agregar nuevo conteo")
     render_individual_count_form()
-
