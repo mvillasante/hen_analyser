@@ -75,11 +75,16 @@ def render_egg_count_form() -> None:
 
 def render_control_chart():
     """Compute and display the X-bar/R control chart."""
-    xr_data = compute_and_save_xr_data(EGG_FILE, COUNT_FILE, XR_FILE)
+    eggs = pd.read_csv(EGG_FILE)
+    counts = pd.read_csv(COUNT_FILE)
+    calculator = X_R_limits_calculator(eggs, counts)
+    calculator.save_x_r(XR_FILE)
+    xr_data = calculator.xr
     xr_last_n_rows = xr_data[-100:].reset_index()
     pyshewhart.XbarR(xr_last_n_rows["Fecha"], xr_last_n_rows["X"], sample_size=SAMPLE_SIZE)
     st.pyplot(plt.gcf())
     plt.close()  # clean up the figure to avoid memory leaks
+    st.dataframe(calculator.data)
 
 
 def compute_and_save_xr_data(
@@ -89,12 +94,6 @@ def compute_and_save_xr_data(
 
     Returns None if either input file is missing or empty.
     """
-    eggs = pd.read_csv(egg_path)
-    counts = pd.read_csv(count_path)
-    if eggs is None or counts is None:
-        return None
-    calculator = X_R_limits_calculator(eggs, counts)
-    calculator.save_x_r(output_path)
     return calculator.xr
 
 
