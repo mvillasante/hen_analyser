@@ -76,14 +76,7 @@ def render_egg_count_form() -> None:
 def render_control_chart() -> None:
     """Compute and display the X-bar/R control chart."""
     xr_data = compute_and_save_xr_data(EGG_FILE, COUNT_FILE, XR_FILE)
-    if xr_data is None or xr_data.empty:
-        st.warning("No hay datos suficientes para generar la carta de control.")
-        return
-    required_cols = {"Fecha", "X"}
-    if not required_cols.issubset(xr_data.columns):
-        st.warning("Los datos de control no contienen las columnas esperadas.")
-        return
-    xr_last_n_rows = xr_data[-100:].reset_index(drop=True)
+    xr_last_n_rows = xr_data[-100:].reset_index()
     pyshewhart.XbarR(xr_last_n_rows["Fecha"], xr_last_n_rows["X"], sample_size=SAMPLE_SIZE)
     st.pyplot(plt.gcf())
     plt.close()  # clean up the figure to avoid memory leaks
