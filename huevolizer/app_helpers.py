@@ -73,7 +73,7 @@ def render_egg_count_form() -> None:
                 st.error(f"Error al guardar: {e}")
 
 
-def render_control_chart() -> None:
+def render_control_chart():
     """Compute and display the X-bar/R control chart."""
     xr_data = compute_and_save_xr_data(EGG_FILE, COUNT_FILE, XR_FILE)
     xr_last_n_rows = xr_data[-100:].reset_index()
