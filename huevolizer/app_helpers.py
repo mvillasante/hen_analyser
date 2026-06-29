@@ -102,7 +102,7 @@ def compute_and_save_xr_data(
         return None
     calculator = X_R_limits_calculator(eggs, counts)
     calculator.save_x_r(output_path)
-    return pd.read_csv(output_path)
+    return calculator.xr
 
 
 def append_to_csv(df: pd.DataFrame, file_path: str) -> None:
