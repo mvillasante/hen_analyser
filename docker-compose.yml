@@ -15,7 +15,6 @@ services:
     volumes:
       - $PWD:/workdir
     restart: always
-
   develop:
     build:
       context: .
