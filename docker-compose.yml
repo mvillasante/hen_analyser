@@ -15,3 +15,11 @@ services:
     volumes:
       - $PWD:/workdir
 
+  develop:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    image: mvillasante/huevolizer_dev:latest
+    command: bash
+    volumes:
+      - $PWD:/workdir
