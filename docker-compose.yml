@@ -14,6 +14,7 @@ services:
       - "8502:8502"
     volumes:
       - $PWD:/workdir
+    restart: always
 
   develop:
     build:
