@@ -14,6 +14,9 @@ jobs:
       uses: hoverkraft-tech/compose-action@main
       env:
        PWD: "${{ github.workspace }}"
+      with:
+        compose-file: ./docker-compose.yml
+        services: main_image
     - name: Verifica el formato 🎨
       run: docker compose run main_image bash -c "make check & make install"
     - name: Run tests and coverage 🐍🧪☂️
