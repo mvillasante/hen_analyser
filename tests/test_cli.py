@@ -34,7 +34,7 @@ def tests_write_control_chart_data():
     assert " Path of daily egg data]" in result.stdout
 
     data_path = "tests/data/producción_diaria.csv"
-    output_path = "salida.csv"
+    output_path = "tests/salida.csv"
     gtt.if_exist_remove(output_path)
     result = runner.invoke(
         cli,
@@ -60,5 +60,5 @@ def test_version():
         cli,
         ["version"],
     )
-    expected_version = "0.0.1"
+    expected_version = "0.1.0"
     assert expected_version in result.stdout
