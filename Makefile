@@ -38,6 +38,7 @@ clean:
 	rm --force --recursive ${module}.egg-info
 	rm --force --recursive ${module}/__pycache__
 	rm --force --recursive tests/__pycache__
+	rm --force --recursive tests/*.csv
 	rm --force .mutmut-cache
 	rm --force coverage.xml
 
