@@ -54,7 +54,7 @@ def render_egg_count_form() -> None:
         fecha = st.date_input("Fecha")
         huevos = st.number_input("Huevos", min_value=0, step=1)
         if st.form_submit_button("Guardar"):
-            if huevos <= 0:
+            if huevos < 0:
                 st.error("Debe ingresar un número positivo de huevos.")
                 return
             new_row = pd.DataFrame(
@@ -85,16 +85,6 @@ def render_control_chart():
     st.pyplot(plt.gcf())
     plt.close()  # clean up the figure to avoid memory leaks
     st.dataframe(calculator.data)
-
-
-def compute_and_save_xr_data(
-    egg_path: str, count_path: str, output_path: str
-) -> Optional[pd.DataFrame]:
-    """Read daily egg and count data, compute X-R chart data, save and return it.
-
-    Returns None if either input file is missing or empty.
-    """
-    return calculator.xr
 
 
 def append_to_csv(df: pd.DataFrame, file_path: str) -> None:
