@@ -7,11 +7,11 @@ class X_R_limits_calculator:
         self.data = self.set_data(raw_data, individual_counts)
         self.x_s = calculate_average_per_sample(self.data)
         self.r_s = calculate_range_per_sample(self.data)
-
-    def save_x_r(self, output_path: str):
         self.xr = pd.DataFrame(
             {"Fecha": self.data.index[1:], "X": self.x_s, "R": self.r_s}
         ).set_index("Fecha")
+
+    def save_x_r(self, output_path: str):
         self.xr.to_csv(output_path)
 
     def set_data(self, raw_data: pd.DataFrame, individual_counts):
