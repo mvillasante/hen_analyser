@@ -1,4 +1,5 @@
 from huevolizer.control_limits import X_R_limits_calculator
+from huevolizer import __version__
 
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -34,4 +35,4 @@ def write_control_chart_data(
 
 @cli.command()
 def version():
-    typer.echo("0.0.1")
+    print(__version__)
