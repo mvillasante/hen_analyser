@@ -84,7 +84,7 @@ def render_control_chart():
     pyshewhart.XbarR(xr_last_n_rows["Fecha"], xr_last_n_rows["X"], sample_size=SAMPLE_SIZE)
     st.pyplot(plt.gcf())
     plt.close()  # clean up the figure to avoid memory leaks
-    st.dataframe(calculator.data)
+    st.dataframe(calculator.data, column_order = ("Fecha","Huevos","Gallinas","eggs_by_hen","Gallos","Pollos","Observaciones"))
 
 
 def append_to_csv(df: pd.DataFrame, file_path: str) -> None:
